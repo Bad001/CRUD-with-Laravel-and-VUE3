@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->float('price');
             $table->string('description');
-            $table->timestamp('acquisition_date');
-            $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('employee_id')->constrained('employees');
+            $table->date('acquisition_date');
+            $table->foreignId('customer_id')->constrained();
+            $table->foreignId('employee_id')->constrained();
         });
     }
 
