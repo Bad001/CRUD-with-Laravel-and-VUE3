@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>HTML Forms</h2>
-
-<form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+@extends('layouts.form')
+@section('action', 'Create a customer')
+@section('form')
+<form action="/todo">
+    <label for="email">Email</label><br>
+    <input type="email" id="email" required><br>
+    <label for="name">First name</label><br>
+    <input type="text" id="name" required><br>
+    <label for="surname">Last name</label><br>
+    <input type="text" id="surname" required><br>
+    <label for="phone">Phone number</label><br>
+    <input type="tel" maxlength="10" id="phone" required><br>
     <input type="submit" value="Submit">
 </form>
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-
-</body>
-</html>
-
+@endsection
+@section('links')
+    <a href="{{ url('customers') }}">Back</a>
+@endsection
