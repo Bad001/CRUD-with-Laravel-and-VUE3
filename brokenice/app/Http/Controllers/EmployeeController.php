@@ -11,7 +11,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employee.index');
+        return view('employees.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employee.create');
+        return view('employees.create');
     }
 
     /**

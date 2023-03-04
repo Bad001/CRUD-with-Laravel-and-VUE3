@@ -20,6 +20,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::resource('employee', EmployeeController::class);
-Route::resource('customer', CustomerController::class);
-Route::resource('order', OrderController::class);
+Route::resource('employees', EmployeeController::class);
+Route::resource('customers', CustomerController::class);
+Route::resource('orders', OrderController::class);
