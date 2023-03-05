@@ -44,7 +44,8 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $orders = Order::find($id);
+        return view('orders.show')->with('orders', $orders);
     }
 
     /**

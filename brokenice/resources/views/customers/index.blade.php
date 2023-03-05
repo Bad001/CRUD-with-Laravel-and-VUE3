@@ -5,7 +5,7 @@
     <a href="{{ url('/') }}">Return Home</a>
 @endsection
 @section('table')
-<table class="table table-striped table-bordered">
+<table>
     <thead>
     <tr>
         <td>ID</td>
