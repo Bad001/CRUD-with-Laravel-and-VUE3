@@ -43,7 +43,8 @@ class CustomerController extends Controller
      */
     public function show(string $id)
     {
-        return view('customers.show');
+        $customers = Customer::find($id);
+        return view('customers.show')->with('customers', $customers);
     }
 
     /**
@@ -74,6 +75,7 @@ class CustomerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Customer::destroy($id);
+        return redirect('customers');
     }
 }

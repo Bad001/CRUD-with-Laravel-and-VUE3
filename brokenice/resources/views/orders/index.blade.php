@@ -26,8 +26,13 @@
             <td>{{ $value->employee_id }}</td>
             <td>{{ $value->description }}</td>
             <td>
-                <a class="btn btn-small btn-success" href="{{ URL::to('orders/' . $value->id) }}">Show</a>
-                <a class="btn btn-small btn-info" href="{{ URL::to('orders/' . $value->id . '/edit') }}">Edit</a>
+                <a href="{{ url('orders/' . $value->id) }}">Show</a>
+                <a href="{{ url('orders/' . $value->id . '/edit') }}">Edit</a>
+                <form method="POST" action="{{ url('orders/' . $value->id) }}" style="display:inline">
+                    {{ method_field('DELETE') }}
+                    {!! csrf_field() !!}
+                    <button type="submit">Delete</button>
+                </form>
             </td>
         </tr>
     @endforeach

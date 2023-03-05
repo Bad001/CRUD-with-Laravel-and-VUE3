@@ -24,8 +24,13 @@
             <td>{{ $value->phone_number }}</td>
             <td>{{ $value->email }}</td>
             <td>
-                <a class="btn btn-small btn-success" href="{{ URL::to('customers/' . $value->id) }}">Show</a>
-                <a class="btn btn-small btn-info" href="{{ URL::to('customers/' . $value->id . '/edit') }}">Edit</a>
+                <a href="{{ url('customers/' . $value->id) }}">Show</a>
+                <a href="{{ url('customers/' . $value->id . '/edit') }}">Edit</a>
+                <form method="POST" action="{{ url('customers/' . $value->id) }}" style="display:inline">
+                    {{ method_field('DELETE') }}
+                    {!! csrf_field() !!}
+                    <button type="submit">Delete</button>
+                </form>
             </td>
         </tr>
     @endforeach
