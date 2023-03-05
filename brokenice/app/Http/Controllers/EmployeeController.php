@@ -76,6 +76,7 @@ class EmployeeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Employee::destroy($id);
+        return redirect('employees');
     }
 }

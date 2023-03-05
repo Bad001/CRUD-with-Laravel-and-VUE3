@@ -29,9 +29,13 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        Customer::create($input);
-        return redirect('customers')->with('flash_message', 'Customer Addedd!');
+        $customers = new Customer;
+        $customers->name = $request->name;
+        $customers->surname = $request->surname;
+        $customers->email = $request->email;
+        $customers->phone_number = $request->phone_number;
+        $customers->save();
+        return redirect('customers');
     }
 
     /**
@@ -47,7 +51,8 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        return view('customers.edit');
+        $customers = Customer::find($id);
+        return view('customers.edit')->with('customers', $customers);
     }
 
     /**
@@ -55,7 +60,13 @@ class CustomerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $customers = Customer::find($id);
+        $customers->name = $request->name;
+        $customers->surname = $request->surname;
+        $customers->email = $request->email;
+        $customers->phone_number = $request->phone_number;
+        $customers->save();
+        return redirect('customers');
     }
 
     /**

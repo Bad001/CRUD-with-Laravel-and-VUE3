@@ -29,9 +29,14 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        Order::create($input);
-        return redirect('orders')->with('flash_message', 'Order Addedd!');
+        $orders = new Order;
+        $orders->price = $request->price;
+        $orders->acquisition_date = $request->acquisition_date;
+        $orders->customer_id = $request->customer_id;
+        $orders->employee_id = $request->employee_id;
+        $orders->description = $request->description;
+        $orders->save();
+        return redirect('orders');
     }
 
     /**
@@ -47,7 +52,8 @@ class OrderController extends Controller
      */
     public function edit(string $id)
     {
-        return view('orders.edit');
+        $orders = Order::find($id);
+        return view('orders.edit')->with('orders', $orders);
     }
 
     /**
@@ -55,7 +61,14 @@ class OrderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $orders = Order::find($id);
+        $orders->price = $request->price;
+        $orders->acquisition_date = $request->acquisition_date;
+        $orders->customer_id = $request->customer_id;
+        $orders->employee_id = $request->employee_id;
+        $orders->description = $request->description;
+        $orders->save();
+        return redirect('orders');
     }
 
     /**
