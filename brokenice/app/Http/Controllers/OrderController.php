@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -11,7 +12,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('orders.index');
+        $orders = Order::all();
+        return view ('orders.index')->with('orders', $orders);
     }
 
     /**
@@ -27,7 +29,9 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Order::create($input);
+        return redirect('orders')->with('flash_message', 'Order Addedd!');
     }
 
     /**
@@ -43,7 +47,7 @@ class OrderController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('orders.edit');
     }
 
     /**

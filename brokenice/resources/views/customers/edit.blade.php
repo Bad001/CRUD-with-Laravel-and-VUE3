@@ -1,8 +1,7 @@
 @extends('layouts.form')
-@section('action', 'Create a customer')
+@section('action', 'Edit a customer')
 @section('form')
-    <form action="{{ url('customers') }}" method="POST">
-        {!! csrf_field() !!}
+    <form action="{{ url('customers/' .$customers->id) }}" method="post">
         <label for="email">Email</label><br>
         <input type="email" id="email" required><br>
         <label for="name">First name</label><br>

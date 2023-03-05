@@ -1,8 +1,7 @@
 @extends('layouts.form')
-@section('action', 'Create a order')
+@section('action', 'Edit a order')
 @section('form')
-    <form action="{{ url('orders') }}" method="POST">
-        {!! csrf_field() !!}
+    <form action="{{ url('orders/') }}" method="put">
         <label for="price">Price</label><br>
         <input type="number" placeholder="EUR currency" min="0" step="any" id="price" required><br>
         <label for="date">Acquisition date</label><br>

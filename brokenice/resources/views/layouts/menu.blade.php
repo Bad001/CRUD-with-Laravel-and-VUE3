@@ -17,6 +17,7 @@
         <div class="links">
             @yield('links')
         </div>
+        @yield('table')
     </div>
 </div>
 </body>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -11,7 +12,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('customers.index');
+        $customers = Customer::all();
+        return view ('customers.index')->with('customers', $customers);
     }
 
     /**
@@ -27,7 +29,9 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Customer::create($input);
+        return redirect('customers')->with('flash_message', 'Customer Addedd!');
     }
 
     /**
@@ -43,7 +47,7 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        return view('customers.update');
+        return view('customers.edit');
     }
 
     /**

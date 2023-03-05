@@ -5,7 +5,7 @@
     <title>Customer section</title>
 </head>
 <body>
-<h1>Show customer</h1>
+<h1> Show customer</h1>
 <a href="/">Back to home</a>
 </body>
 </html>

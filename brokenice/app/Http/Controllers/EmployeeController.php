@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -11,7 +12,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view('employees.index');
+        $employees = Employee::all();
+        return view ('employees.index')->with('employees', $employees);
     }
 
     /**
@@ -27,7 +29,14 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employees = new Employee;
+        $employees->name = $request->name;
+        $employees->surname = $request->surname;
+        $employees->email = $request->email;
+        $employees->phone_number = $request->phone_number;
+        $employees->salary_level = $request->salary_level;
+        $employees->save();
+        return redirect('employees');
     }
 
     /**
@@ -35,7 +44,7 @@ class EmployeeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('employees.show');
     }
 
     /**
@@ -43,7 +52,8 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $employees = Employee::find($id);
+        return view('employees.edit')->with('employees', $employees);
     }
 
     /**
@@ -51,7 +61,14 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $employees = Employee::find($id);
+        $employees->name = $request->name;
+        $employees->surname = $request->surname;
+        $employees->email = $request->email;
+        $employees->phone_number = $request->phone_number;
+        $employees->salary_level = $request->salary_level;
+        $employees->save();
+        return redirect('employees');
     }
 
     /**
