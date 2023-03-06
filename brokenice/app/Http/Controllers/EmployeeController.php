@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class EmployeeController extends Controller
 {
@@ -34,7 +35,7 @@ class EmployeeController extends Controller
             'phone_number' => ['required', 'integer', 'unique:employees', 'max_digits:10'],
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
-            'salary_level' => ['required', 'integer', 'min:1', 'max:5'],
+            'salary_level' => ['required', 'integer', 'between:1,5'],
         ]);
         $employees = new Employee;
         $employees->name = $request->name;
@@ -69,6 +70,13 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'email' => ['required', 'email:rfc,dns', 'max:40', Rule::unique('employees')->ignore($id)],
+            'phone_number' => ['required', 'integer', 'max_digits:10', Rule::unique('employees')->ignore($id)],
+            'name' => ['required', 'max:40'],
+            'surname' => ['required', 'max:40'],
+            'salary_level' => ['required', 'integer', 'between:1,5'],
+        ]);
         $employees = Employee::findOrFail($id);
         $employees->name = $request->name;
         $employees->surname = $request->surname;

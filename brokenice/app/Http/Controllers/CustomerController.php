@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Rule;
 
 class CustomerController extends Controller
 {
@@ -32,7 +32,7 @@ class CustomerController extends Controller
     {
         $request->validate([
             'email' => ['required', 'email:rfc,dns', 'unique:customers', 'max:40'],
-            'phone_number' => ['required', 'unique:customers', 'max:10'],
+            'phone_number' => ['required', 'integer', 'unique:customers', 'max:10'],
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);
@@ -69,8 +69,8 @@ class CustomerController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'email' => ['required', 'email:rfc,dns', 'unique:customers', 'max:40'],
-            'phone_number' => ['required', 'integer', 'unique:customers', 'max_digits:10'],
+            'email' => ['required', 'email:rfc,dns', 'max:40', Rule::unique('customers')->ignore($id)],
+            'phone_number' => ['required', 'integer', 'max_digits:10', Rule::unique('customers')->ignore($id)],
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);

@@ -30,10 +30,10 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'price' => ['required', 'float', 'min:1'],
-            'acquisition_date' => ['required', 'max:10'],   // to do
-            'customer_id' => ['required', 'integer', 'min:0'],
-            'employee_id' => ['required', 'integer', 'min:0'],
+            'price' => ['required', 'numeric', 'min:1'],
+            'acquisition_date' => ['required', 'date', 'before_or_equal:today'],
+            'customer_id' => ['required', 'integer', 'exists:customers,id', 'min:1'],
+            'employee_id' => ['required', 'integer', 'exists:employees,id', 'min:1'],
             'description' => ['required', 'max:255'],
         ]);
         $orders = new Order;
@@ -69,6 +69,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'price' => ['required', 'float', 'min:1'],
+            'acquisition_date' => ['required', 'date', 'before:today'],   // to do
+            'customer_id' => ['required', 'integer', 'exist:customers,id', 'min:1'],
+            'employee_id' => ['required', 'integer', 'exist:employees,id', 'min:1'],
+            'description' => ['required', 'max:255'],
+        ]);
         $orders = Order::findOrFail($id);
         $orders->price = $request->price;
         $orders->acquisition_date = $request->acquisition_date;
