@@ -29,6 +29,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'price' => ['required', 'float', 'min:1'],
+            'acquisition_date' => ['required', 'max:10'],   // to do
+            'customer_id' => ['required', 'integer', 'min:0'],
+            'employee_id' => ['required', 'integer', 'min:0'],
+            'description' => ['required', 'max:255'],
+        ]);
         $orders = new Order;
         $orders->price = $request->price;
         $orders->acquisition_date = $request->acquisition_date;
@@ -44,7 +51,7 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        $orders = Order::find($id);
+        $orders = Order::findOrFail($id);
         return view('orders.show')->with('orders', $orders);
     }
 
@@ -53,7 +60,7 @@ class OrderController extends Controller
      */
     public function edit(string $id)
     {
-        $orders = Order::find($id);
+        $orders = Order::findOrFail($id);
         return view('orders.edit')->with('orders', $orders);
     }
 
@@ -62,7 +69,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $orders = Order::find($id);
+        $orders = Order::findOrFail($id);
         $orders->price = $request->price;
         $orders->acquisition_date = $request->acquisition_date;
         $orders->customer_id = $request->customer_id;

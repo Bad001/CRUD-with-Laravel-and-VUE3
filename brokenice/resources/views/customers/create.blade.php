@@ -1,5 +1,16 @@
 @extends('layouts.form')
 @section('action', 'Create a customer')
+@section('errors')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ol>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ol>
+        </div>
+    @endif
+@endsection
 @section('form')
     <form action="{{ url('customers') }}" method="POST">
         {!! csrf_field() !!}

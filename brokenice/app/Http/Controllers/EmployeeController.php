@@ -29,6 +29,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'email' => ['required', 'email:rfc,dns', 'unique:employees', 'max:40'],
+            'phone_number' => ['required', 'integer', 'unique:employees', 'max_digits:10'],
+            'name' => ['required', 'max:40'],
+            'surname' => ['required', 'max:40'],
+            'salary_level' => ['required', 'integer', 'min:1', 'max:5'],
+        ]);
         $employees = new Employee;
         $employees->name = $request->name;
         $employees->surname = $request->surname;
@@ -44,7 +51,7 @@ class EmployeeController extends Controller
      */
     public function show(string $id)
     {
-        $employees = Employee::find($id);
+        $employees = Employee::findOrFail($id);
         return view('employees.show')->with('employees', $employees);
     }
 
@@ -53,7 +60,7 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-        $employees = Employee::find($id);
+        $employees = Employee::findOrFail($id);
         return view('employees.edit')->with('employees', $employees);
     }
 
@@ -62,7 +69,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $employees = Employee::find($id);
+        $employees = Employee::findOrFail($id);
         $employees->name = $request->name;
         $employees->surname = $request->surname;
         $employees->email = $request->email;

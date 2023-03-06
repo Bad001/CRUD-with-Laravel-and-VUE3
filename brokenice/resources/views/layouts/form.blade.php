@@ -14,6 +14,7 @@
             <div class="title m-b-md">
                 @yield('action')
             </div>
+            @yield('errors')
             <div class="container">
                 @yield('form')
             </div>
