@@ -10,7 +10,7 @@ class Customer extends Model
     protected $table = 'customers';
     public $timestamps = false;
     protected $fillable = ['name', 'surname', 'phone_number', 'email'];
-    public function orders(): HasMany
+    public function order(): HasMany
     {
         return $this->hasMany(Order::class);
     }

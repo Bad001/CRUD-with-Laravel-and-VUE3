@@ -12,6 +12,6 @@ class Employee extends Model
     protected $fillable = ['name', 'surname', 'phone_number', 'email', 'salary_level'];
     public function orders(): BelongsToMany
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class)->using(EmployeeOrder::class);
     }
 }
