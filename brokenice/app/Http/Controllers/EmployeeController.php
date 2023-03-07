@@ -37,13 +37,13 @@ class EmployeeController extends Controller
             'surname' => ['required', 'max:40'],
             'salary_level' => ['required', 'integer', 'between:1,5'],
         ]);
-        $employees = new Employee;
-        $employees->name = $request->name;
-        $employees->surname = $request->surname;
-        $employees->email = $request->email;
-        $employees->phone_number = $request->phone_number;
-        $employees->salary_level = $request->salary_level;
-        $employees->save();
+        $employee = new Employee;
+        $employee->name = $request->name;
+        $employee->surname = $request->surname;
+        $employee->email = $request->email;
+        $employee->phone_number = $request->phone_number;
+        $employee->salary_level = $request->salary_level;
+        $employee->save();
         return redirect('employees');
     }
 
@@ -52,8 +52,8 @@ class EmployeeController extends Controller
      */
     public function show(string $id)
     {
-        $employees = Employee::findOrFail($id);
-        return view('employees.show')->with('employees', $employees);
+        $employee = Employee::findOrFail($id);
+        return view('employees.show')->with('employee', $employee);
     }
 
     /**
@@ -61,8 +61,8 @@ class EmployeeController extends Controller
      */
     public function edit(string $id)
     {
-        $employees = Employee::findOrFail($id);
-        return view('employees.edit')->with('employees', $employees);
+        $employee = Employee::findOrFail($id);
+        return view('employees.edit')->with('employee', $employee);
     }
 
     /**
@@ -77,13 +77,13 @@ class EmployeeController extends Controller
             'surname' => ['required', 'max:40'],
             'salary_level' => ['required', 'integer', 'between:1,5'],
         ]);
-        $employees = Employee::findOrFail($id);
-        $employees->name = $request->name;
-        $employees->surname = $request->surname;
-        $employees->email = $request->email;
-        $employees->phone_number = $request->phone_number;
-        $employees->salary_level = $request->salary_level;
-        $employees->save();
+        $employee = Employee::findOrFail($id);
+        $employee->name = $request->name;
+        $employee->surname = $request->surname;
+        $employee->email = $request->email;
+        $employee->phone_number = $request->phone_number;
+        $employee->salary_level = $request->salary_level;
+        $employee->save();
         return redirect('employees');
     }
 

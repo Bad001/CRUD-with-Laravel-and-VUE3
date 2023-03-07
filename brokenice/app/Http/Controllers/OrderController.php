@@ -36,13 +36,13 @@ class OrderController extends Controller
             'employee_id' => ['required', 'integer', 'exists:employees,id', 'min:1'],
             'description' => ['required', 'max:255'],
         ]);
-        $orders = new Order;
-        $orders->price = $request->price;
-        $orders->acquisition_date = $request->acquisition_date;
-        $orders->customer_id = $request->customer_id;
-        $orders->employee_id = $request->employee_id;
-        $orders->description = $request->description;
-        $orders->save();
+        $order = new Order;
+        $order->price = $request->price;
+        $order->acquisition_date = $request->acquisition_date;
+        $order->customer_id = $request->customer_id;
+        $order->employee_id = $request->employee_id;
+        $order->description = $request->description;
+        $order->save();
         return redirect('orders');
     }
 
@@ -51,8 +51,8 @@ class OrderController extends Controller
      */
     public function show(string $id)
     {
-        $orders = Order::findOrFail($id);
-        return view('orders.show')->with('orders', $orders);
+        $order = Order::findOrFail($id);
+        return view('orders.show')->with('order', $order);
     }
 
     /**
@@ -60,8 +60,8 @@ class OrderController extends Controller
      */
     public function edit(string $id)
     {
-        $orders = Order::findOrFail($id);
-        return view('orders.edit')->with('orders', $orders);
+        $order = Order::findOrFail($id);
+        return view('orders.edit')->with('order', $order);
     }
 
     /**
@@ -76,13 +76,13 @@ class OrderController extends Controller
             'employee_id' => ['required', 'integer', 'exist:employees,id', 'min:1'],
             'description' => ['required', 'max:255'],
         ]);
-        $orders = Order::findOrFail($id);
-        $orders->price = $request->price;
-        $orders->acquisition_date = $request->acquisition_date;
-        $orders->customer_id = $request->customer_id;
-        $orders->employee_id = $request->employee_id;
-        $orders->description = $request->description;
-        $orders->save();
+        $order = Order::findOrFail($id);
+        $order->price = $request->price;
+        $order->acquisition_date = $request->acquisition_date;
+        $order->customer_id = $request->customer_id;
+        $order->employee_id = $request->employee_id;
+        $order->description = $request->description;
+        $order->save();
         return redirect('orders');
     }
 

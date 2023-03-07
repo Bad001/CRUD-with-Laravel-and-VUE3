@@ -1,5 +1,5 @@
 @extends('layouts.menu')
-@section('title', 'Order ' . $orders->id)
+@section('title', 'Order ' . $order->id)
 @section('table')
     <table>
         <thead>
@@ -14,12 +14,12 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $orders->id }}</td>
-                <td>{{ $orders->price }}</td>
-                <td>{{ $orders->acquisition_date }}</td>
-                <td>{{ $orders->customer_id }}</td>
-                <td>{{ $orders->employee_id }}</td>
-                <td>{{ $orders->description }}</td>
+                <td>{{ $order->id }}</td>
+                <td>{{ $order->price }}</td>
+                <td>{{ $order->acquisition_date }}</td>
+                <td>{{ $order->customer_id }}</td>
+                <td>{{ $order->employee_id }}</td>
+                <td>{{ $order->description }}</td>
                 <td>
                     <a href="{{ url('orders') }}">Back</a>
                 </td>

@@ -36,12 +36,12 @@ class CustomerController extends Controller
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);
-        $customers = new Customer;
-        $customers->name = $request->name;
-        $customers->surname = $request->surname;
-        $customers->email = $request->email;
-        $customers->phone_number = $request->phone_number;
-        $customers->save();
+        $customer = new Customer;
+        $customer->name = $request->name;
+        $customer->surname = $request->surname;
+        $customer->email = $request->email;
+        $customer->phone_number = $request->phone_number;
+        $customer->save();
         return redirect('customers');
     }
 
@@ -50,8 +50,8 @@ class CustomerController extends Controller
      */
     public function show(string $id)
     {
-        $customers = Customer::findOrFail($id);
-        return view('customers.show')->with('customers', $customers);
+        $customer = Customer::findOrFail($id);
+        return view('customers.show')->with('customer', $customer);
     }
 
     /**
@@ -59,8 +59,8 @@ class CustomerController extends Controller
      */
     public function edit(string $id)
     {
-        $customers = Customer::findOrFail($id);
-        return view('customers.edit')->with('customers', $customers);
+        $customer = Customer::findOrFail($id);
+        return view('customers.edit')->with('customer', $customer);
     }
 
     /**
@@ -74,12 +74,12 @@ class CustomerController extends Controller
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);
-        $customers = Customer::findOrFail($id);
-        $customers->name = $request->name;
-        $customers->surname = $request->surname;
-        $customers->email = $request->email;
-        $customers->phone_number = $request->phone_number;
-        $customers->save();
+        $customer = Customer::findOrFail($id);
+        $customer->name = $request->name;
+        $customer->surname = $request->surname;
+        $customer->email = $request->email;
+        $customer->phone_number = $request->phone_number;
+        $customer->save();
         return redirect('customers');
     }
 

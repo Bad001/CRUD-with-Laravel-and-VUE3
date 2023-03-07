@@ -1,5 +1,5 @@
 @extends('layouts.menu')
-@section('title', 'Employee ' . $employees->id)
+@section('title', 'Employee ' . $employee->id)
 @section('table')
     <table>
         <thead>
@@ -14,12 +14,12 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{ $employees->id }}</td>
-                <td>{{ $employees->name }}</td>
-                <td>{{ $employees->surname }}</td>
-                <td>{{ $employees->phone_number }}</td>
-                <td>{{ $employees->email }}</td>
-                <td>{{ $employees->salary_level }}</td>
+                <td>{{ $employee->id }}</td>
+                <td>{{ $employee->name }}</td>
+                <td>{{ $employee->surname }}</td>
+                <td>{{ $employee->phone_number }}</td>
+                <td>{{ $employee->email }}</td>
+                <td>{{ $employee->salary_level }}</td>
                 <td>
                     <a href="{{ url('employees') }}">Back</a>
                 </td>
