@@ -14,12 +14,22 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        /*$employeesThatFollowsCustomer = Employee::where('')->get();
-        $salaryLevelFollowsOrders = Employee::where('')->get();
+        $employeesThatFollowsCustomer = Employee::whereHas('orders', function($q){
+            $q->where('customer_id', '=', '6');
+        })
+            ->groupBy('id')
+            ->get();
+        /*$salaryLevelFollowsOrders = Employee::where('')->get();
         $employeesTotalAmountOrdersFollowed = Employee::where('')->get();
         $salaryLevelTotalAmountSpentForOrdersFollowed = Employee::where('')->get();
         $employeesTotalOrdersFollowed = Employee::where('')->get();*/
-        return view ('employees.index')->with('employees', $employees);
+        return view ('employees.index')
+            ->with('employees', $employees)
+            ->with('employeesThatFollowsCustomer', $employeesThatFollowsCustomer);
+            /*->with('salaryLevelFollowsOrders', $salaryLevelFollowsOrders)
+            ->with('employeesTotalAmountOrdersFollowed', $employeesTotalAmountOrdersFollowed)
+            ->with('salaryLevelTotalAmountSpentForOrdersFollowed', $salaryLevelTotalAmountSpentForOrdersFollowed)
+            ->with('employeesTotalOrdersFollowed', $employeesTotalOrdersFollowed);*/
     }
 
     /**

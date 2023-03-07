@@ -38,4 +38,29 @@
     @endforeach
     </tbody>
 </table>
+<h4>Employees that follows the customer with ID 6</h4>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Phone Number</td>
+        <td>Email</td>
+        <td>Salary Level</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($employeesThatFollowsCustomer as $employeeThatFollowCustomer => $value)
+        <tr>
+            <td>{{ $value->id }}</td>
+            <td>{{ $value->name }}</td>
+            <td>{{ $value->surname }}</td>
+            <td>{{ $value->phone_number }}</td>
+            <td>{{ $value->email }}</td>
+            <td>{{ $value->salary_level }}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
 @endsection

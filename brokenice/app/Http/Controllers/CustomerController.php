@@ -15,11 +15,11 @@ class CustomerController extends Controller
     {
         $customers = Customer::all();
         $customersTotalAmountSpent = Customer::withSum('orders as total_amount_spent', 'price')
-                                            ->orderBy('total_amount_spent', 'desc')
-                                            ->groupBy('id')
-                                            ->get();
+            ->orderBy('total_amount_spent', 'desc')
+            ->groupBy('id')
+            ->get();
         return view ('customers.index')->with('customers', $customers)
-                                            ->with('customersTotalAmountSpent', $customersTotalAmountSpent);
+            ->with('customersTotalAmountSpent', $customersTotalAmountSpent);
     }
 
     /**

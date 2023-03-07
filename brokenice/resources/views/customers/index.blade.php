@@ -36,7 +36,7 @@
     @endforeach
     </tbody>
 </table>
-<h4>Total amount spent for each customer (DESCENDENT)</h4>
+<h4>Total amount spent for orders for each customer</h4>
 <table>
     <thead>
     <tr>
@@ -44,6 +44,7 @@
         <td>Amount Spent</td>
         <td>First Name</td>
         <td>Last Name</td>
+        <td>Phone Number</td>
         <td>Email</td>
     </tr>
     </thead>
@@ -51,9 +52,14 @@
     @foreach($customersTotalAmountSpent as $customerTotalAmountSpent => $value)
         <tr>
             <td>{{ $value->id }}</td>
-            <td>{{ $value->total_amount_spent }}</td>
+            @if($value->total_amount_spent === NULL)
+                <td>0 €</td>
+            @else
+                <td>{{ $value->total_amount_spent }} €</td>
+            @endif
             <td>{{ $value->name }}</td>
             <td>{{ $value->surname }}</td>
+            <td>{{ $value->phone_number }}</td>
             <td>{{ $value->email }}</td>
         </tr>
     @endforeach
