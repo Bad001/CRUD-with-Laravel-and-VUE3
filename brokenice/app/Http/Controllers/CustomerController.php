@@ -14,7 +14,12 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view ('customers.index')->with('customers', $customers);
+        $customersTotalAmountSpent = Customer::withSum('orders as total_amount_spent', 'price')
+                                            ->orderBy('total_amount_spent', 'desc')
+                                            ->groupBy('id')
+                                            ->get();
+        return view ('customers.index')->with('customers', $customers)
+                                            ->with('customersTotalAmountSpent', $customersTotalAmountSpent);
     }
 
     /**

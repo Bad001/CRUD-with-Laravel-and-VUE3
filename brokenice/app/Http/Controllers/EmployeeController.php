@@ -14,6 +14,11 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
+        /*$employeesThatFollowsCustomer = Employee::where('')->get();
+        $salaryLevelFollowsOrders = Employee::where('')->get();
+        $employeesTotalAmountOrdersFollowed = Employee::where('')->get();
+        $salaryLevelTotalAmountSpentForOrdersFollowed = Employee::where('')->get();
+        $employeesTotalOrdersFollowed = Employee::where('')->get();*/
         return view ('employees.index')->with('employees', $employees);
     }
 

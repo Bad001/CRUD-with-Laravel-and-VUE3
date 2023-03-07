@@ -13,6 +13,8 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+        /*$ordersFollowedByEmployee = Order::where()->get();
+        $februaryOrdersFollowedByEmployees = Order::where()->get();*/
         return view ('orders.index')->with('orders', $orders);
     }
 
@@ -70,10 +72,10 @@ class OrderController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'price' => ['required', 'float', 'min:1'],
+            'price' => ['required', 'numeric', 'min:1'],
             'acquisition_date' => ['required', 'date', 'before_or_equal:today'],
-            'customer_id' => ['required', 'integer', 'exist:customers,id', 'min:1'],
-            'employee_id' => ['required', 'integer', 'exist:employees,id', 'min:1'],
+            'customer_id' => ['required', 'integer', 'exists:customers,id', 'min:1'],
+            'employee_id' => ['required', 'integer', 'exists:employees,id', 'min:1'],
             'description' => ['required', 'max:255'],
         ]);
         $order = Order::findOrFail($id);

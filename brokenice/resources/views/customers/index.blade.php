@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($customers as $key => $value)
+    @foreach($customers as $customer => $value)
         <tr>
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>
@@ -32,6 +32,29 @@
                     <button type="submit">Delete</button>
                 </form>
             </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+<h4>Total amount spent for each customer (DESCENDENT)</h4>
+<table>
+    <thead>
+    <tr>
+        <td>Customer ID</td>
+        <td>Amount Spent</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($customersTotalAmountSpent as $customerTotalAmountSpent => $value)
+        <tr>
+            <td>{{ $value->id }}</td>
+            <td>{{ $value->total_amount_spent }}</td>
+            <td>{{ $value->name }}</td>
+            <td>{{ $value->surname }}</td>
+            <td>{{ $value->email }}</td>
         </tr>
     @endforeach
     </tbody>

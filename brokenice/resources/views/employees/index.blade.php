@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($employees as $key => $value)
+    @foreach($employees as $employee => $value)
         <tr>
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>
