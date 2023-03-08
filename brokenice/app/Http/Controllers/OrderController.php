@@ -13,9 +13,11 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        /*$ordersFollowedByEmployee = Order::where()->get();
-        $februaryOrdersFollowedByEmployees = Order::where()->get();*/
-        return view ('orders.index')->with('orders', $orders);
+        $ordersFollowedByEmployee = Order::where('employee_id', '=', '26')->get();
+        $februaryOrdersFollowedByEmployees = Order::whereMonth('acquisition_date', '2')->get();
+        return view ('orders.index')->with('orders', $orders)
+            ->with('ordersFollowedByEmployee', $ordersFollowedByEmployee)
+            ->with('februaryOrdersFollowedByEmployees', $februaryOrdersFollowedByEmployees);
     }
 
     /**

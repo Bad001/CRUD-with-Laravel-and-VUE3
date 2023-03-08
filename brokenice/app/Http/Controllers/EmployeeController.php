@@ -19,17 +19,29 @@ class EmployeeController extends Controller
         })
             ->groupBy('id')
             ->get();
-        /*$salaryLevelFollowsOrders = Employee::where('')->get();
-        $employeesTotalAmountOrdersFollowed = Employee::where('')->get();
-        $salaryLevelTotalAmountSpentForOrdersFollowed = Employee::where('')->get();
-        $employeesTotalOrdersFollowed = Employee::where('')->get();*/
+        $salaryLevelFollowsOrders = Employee::withCount('orders as total_orders')
+            ->orderBy('salary_level', 'desc')
+            ->groupBy('salary_level')
+            ->get();
+        $employeesTotalAmountOrdersFollowed = Employee::withSum('orders as total_amount_handled', 'price')
+            ->orderBy('total_amount_handled', 'desc')
+            ->groupBy('id')
+            ->get();
+        $salaryLevelTotalAmountSpentForOrdersFollowed = Employee::withSum('orders as total_amount_handled', 'price')
+            ->orderBy('salary_level', 'desc')
+            ->groupBy('salary_level')
+            ->get();
+        $employeesTotalOrdersFollowed = Employee::withCount('orders as total_orders')
+            ->orderBy('total_orders', 'desc')
+            ->groupBy('id')
+            ->get();
         return view ('employees.index')
             ->with('employees', $employees)
-            ->with('employeesThatFollowsCustomer', $employeesThatFollowsCustomer);
-            /*->with('salaryLevelFollowsOrders', $salaryLevelFollowsOrders)
+            ->with('employeesThatFollowsCustomer', $employeesThatFollowsCustomer)
+            ->with('salaryLevelFollowsOrders', $salaryLevelFollowsOrders)
             ->with('employeesTotalAmountOrdersFollowed', $employeesTotalAmountOrdersFollowed)
             ->with('salaryLevelTotalAmountSpentForOrdersFollowed', $salaryLevelTotalAmountSpentForOrdersFollowed)
-            ->with('employeesTotalOrdersFollowed', $employeesTotalOrdersFollowed);*/
+            ->with('employeesTotalOrdersFollowed', $employeesTotalOrdersFollowed);
     }
 
     /**

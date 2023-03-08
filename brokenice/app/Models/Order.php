@@ -10,7 +10,7 @@ class Order extends Model
     protected $table = 'orders';
     public $timestamps = false;
     protected $fillable = ['price', 'description', 'acquisition_date', 'customer_id', 'employee_id'];
-    public function employees(): BelongsTo
+    public function employee(): BelongsTo
     {
         return $this->belongsTo(Employee::class);
     }

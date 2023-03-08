@@ -36,7 +36,7 @@
     @endforeach
     </tbody>
 </table>
-<h4>Total amount spent for orders for each customer</h4>
+<h4>Total amount spent for orders by each customer</h4>
 <table>
     <thead>
     <tr>
