@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
@@ -16,6 +17,11 @@ export default {
     },
     mounted() {
         console.log('Component order mounted')
+        axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => console.log(response))
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
     }
 }
 </script>
