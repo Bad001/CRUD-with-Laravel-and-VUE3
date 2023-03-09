@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,23 +21,15 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// In the future I will make a controller to handle this 4 routes
 Route::get('/vue3/index', function () {
     return view('vue3.app');
 });
 
-Route::get('/vue3/employees', function () {
-    return view('vue3.employees');
+Route::controller(ApiController::class)->group(function () {
+    Route::get('/vue3/api/employees/', 'getEmployees');
+    Route::get('/vue3/api/customers/', 'getCustomers');
+    Route::get('/vue3/api/orders/', 'getOrders');
 });
-
-Route::get('/vue3/customers', function () {
-    return view('vue3.customers');
-});
-
-Route::get('/vue3/orders', function () {
-    return view('vue3.orders');
-});
-
 Route::resource('employees', EmployeeController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('orders', OrderController::class);
