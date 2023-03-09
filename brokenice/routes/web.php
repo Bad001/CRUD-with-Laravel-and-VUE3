@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/vue3', function () {
+    return view('app');
+})->name('vue3');
+
 Route::resource('employees', EmployeeController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('orders', OrderController::class);
