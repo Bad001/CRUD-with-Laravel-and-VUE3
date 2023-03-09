@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="app">
-    <index-component></index-component>
+    <customer-component></customer-component>
 </div>
 </body>
 </html>

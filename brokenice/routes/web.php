@@ -20,9 +20,22 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/vue3', function () {
-    return view('app');
-})->name('vue3');
+// In the future I will make a controller to handle this 4 routes
+Route::get('/vue3/index', function () {
+    return view('vue3.app');
+});
+
+Route::get('/vue3/employees', function () {
+    return view('vue3.employees');
+});
+
+Route::get('/vue3/customers', function () {
+    return view('vue3.customers');
+});
+
+Route::get('/vue3/orders', function () {
+    return view('vue3.orders');
+});
 
 Route::resource('employees', EmployeeController::class);
 Route::resource('customers', CustomerController::class);

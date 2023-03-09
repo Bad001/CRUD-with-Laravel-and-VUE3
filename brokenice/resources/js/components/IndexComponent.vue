@@ -1,9 +1,6 @@
 <template>
     <div>
-        <h1>{{message}}</h1>
-        <p>
-            Funge
-        </p>
+        <h1>{{title}}</h1>
     </div>
 </template>
 
@@ -11,7 +8,7 @@
 export default {
     data() {
         return {
-            message: 'Prova',
+            title: 'Index',
         }
     },
     mounted() {
@@ -19,3 +16,11 @@ export default {
     }
 }
 </script>
+<style>
+html, body {
+    background-color: #636b6f;
+    color: #fff;
+    font-weight: 200;
+    height: 100vh;
+}
+</style>

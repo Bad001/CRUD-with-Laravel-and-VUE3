@@ -15,9 +15,13 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
 import IndexComponent from './components/IndexComponent.vue';
-app.component('example-component', ExampleComponent);
+import EmployeeComponent from './components/EmployeeComponent.vue';
+import CustomerComponent from './components/CustomerComponent.vue';
+import OrderComponent from './components/OrderComponent.vue';
+app.component('employee-component', EmployeeComponent)
+app.component('customer-component', CustomerComponent)
+app.component('order-component', OrderComponent)
 app.component('index-component', IndexComponent);
 app.mount('#app');
 
