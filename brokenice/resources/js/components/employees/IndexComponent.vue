@@ -36,7 +36,7 @@ export default {
         }
     },
     mounted() {
-        console.log('Component employee mounted')
+        console.log('Component employees mounted')
         axios.get('http://127.0.0.1/api/vue3/employees').then(response => this.employees = response.data)
             .catch(function (error) {
                 console.log(error);

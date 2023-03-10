@@ -1,5 +1,5 @@
 @extends('layouts.form')
-@section('action', 'Create an employee')
+@section('action', 'Create an employees')
 @section('errors')
     @if ($errors->any())
         <div class="alert alert-danger">

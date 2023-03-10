@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +25,15 @@ Route::get('/vue3/index', function () {
 });
 
 Route::get('/vue3/employees', function () {
-    return view('vue3.employees');
+    return view('vue3.employees.index');
 });
 
 Route::get('/vue3/customers', function () {
-    return view('vue3.customers');
+    return view('vue3.customers.index');
 });
 
 Route::get('/vue3/orders', function () {
-    return view('vue3.orders');
+    return view('vue3.orders.index');
 });
 
 Route::resource('employees', EmployeeController::class);

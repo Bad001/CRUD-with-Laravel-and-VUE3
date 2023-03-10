@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="app">
-    <customer-component></customer-component>
+    <edit-customer-component></edit-customer-component>
     <a href="{{ url('/vue3/index') }}">Back to index</a>
 </div>
 </body>

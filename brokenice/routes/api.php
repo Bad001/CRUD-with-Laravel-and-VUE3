@@ -20,7 +20,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(ApiController::class)->group(function () {
+    // Index
     Route::get('/vue3/employees/', 'getEmployees');
     Route::get('/vue3/customers/', 'getCustomers');
     Route::get('/vue3/orders/', 'getOrders');
+    // Create
+    Route::post('/vue3/orders/', 'storeOrder');
+    Route::post('/vue3/customers/', 'storeCustomer');
+    Route::post('/vue3/employees/', 'storeEmployee');
+    // Read
+    Route::get('/vue3/orders/{order}', 'showOrder');
+    Route::get('/vue3/customers/{customer}', 'showCustomer');
+    Route::get('/vue3/employees/{employees}', 'showEmployee');
+    // Update
+    Route::patch('/vue3/orders/{order}', 'updateOrder');
+    Route::patch('/vue3/customers/{customer}', 'updateCustomer');
+    Route::patch('/vue3/employees/{employees}', 'updateEmployee');
+    // Delete
+    Route::delete('/vue3/orders/{order}', 'deleteOrder');
+    Route::delete('/vue3/customers/{customer}', 'deleteCustomer');
+    Route::delete('/vue3/employees/{employees}', 'deleteEmployee');
 });

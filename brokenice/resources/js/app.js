@@ -15,16 +15,40 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
+// Index components
 import IndexComponent from './components/IndexComponent.vue';
-import EmployeeComponent from './components/EmployeeComponent.vue';
-import CustomerComponent from './components/CustomerComponent.vue';
-import OrderComponent from './components/OrderComponent.vue';
-app.component('employee-component', EmployeeComponent)
-app.component('customer-component', CustomerComponent)
-app.component('order-component', OrderComponent)
+import IndexEmployeeComponent from './components/employees/IndexComponent.vue';
+import IndexCustomerComponent from './components/customers/IndexComponent.vue';
+import IndexOrderComponent from './components/orders/IndexComponent.vue';
+// Create components
+import CreateEmployeeComponent from './components/employees/CreateComponent.vue';
+import CreateCustomerComponent from './components/customers/CreateComponent.vue';
+import CreateOrderComponent from './components/orders/CreateComponent.vue';
+// Edit components
+import EditEmployeeComponent from './components/employees/EditComponent.vue';
+import EditCustomerComponent from './components/customers/EditComponent.vue';
+import EditOrderComponent from './components/orders/EditComponent.vue';
+// Show components
+import ShowEmployeeComponent from './components/employees/ShowComponent.vue';
+import ShowCustomerComponent from './components/customers/ShowComponent.vue';
+import ShowOrderComponent from './components/orders/ShowComponent.vue';
 app.component('index-component', IndexComponent);
+app.component('index-customer-component', IndexCustomerComponent);
+app.component('index-order-component', IndexOrderComponent);
+app.component('index-employee-component', IndexEmployeeComponent);
+// Employee components
+app.component('create-employee-component', CreateEmployeeComponent);
+app.component('edit-employee-component', EditEmployeeComponent);
+app.component('show-employee-component', ShowEmployeeComponent);
+// Customer components
+app.component('create-customer-component', CreateCustomerComponent);
+app.component('edit-customer-component', EditCustomerComponent);
+app.component('show-customer-component', ShowCustomerComponent);
+// Order components
+app.component('create-order-component', CreateOrderComponent);
+app.component('edit-order-component', EditOrderComponent);
+app.component('show-order-component', ShowOrderComponent);
 app.mount('#app');
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
