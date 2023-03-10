@@ -20,22 +20,42 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::resource('employees', EmployeeController::class);
+Route::resource('customers', CustomerController::class);
+Route::resource('orders', OrderController::class);
+
+// Indexes
 Route::get('/vue3/index', function () {
     return view('vue3.app');
 });
-
 Route::get('/vue3/employees', function () {
     return view('vue3.employees.index');
 });
-
 Route::get('/vue3/customers', function () {
     return view('vue3.customers.index');
 });
-
 Route::get('/vue3/orders', function () {
     return view('vue3.orders.index');
 });
 
-Route::resource('employees', EmployeeController::class);
-Route::resource('customers', CustomerController::class);
-Route::resource('orders', OrderController::class);
+// Create views
+Route::get('/vue3/employees/create', function () {
+    return view('vue3.employees.create');
+});
+Route::get('/vue3/customers/create', function () {
+    return view('vue3.customers.create');
+});
+Route::get('/vue3/orders/create', function () {
+    return view('vue3.orders.create');
+});
+
+// Edit views
+Route::get('/vue3/employees/{employee}/edit', function () {
+    return view('vue3.employees.edit');
+});
+Route::get('/vue3/customers/{customer}/edit', function () {
+    return view('vue3.customers.edit');
+});
+Route::get('/vue3/orders/{order}/edit', function () {
+    return view('vue3.orders.edit');
+});

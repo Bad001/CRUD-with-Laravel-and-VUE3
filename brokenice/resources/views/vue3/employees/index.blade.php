@@ -9,6 +9,7 @@
 <div id="app">
     <index-employee-component></index-employee-component>
     <a href="{{ url('/vue3/index') }}">Back to index</a>
+    <a href="{{ url('/vue3/employees/create') }}">| Create an employee</a>
 </div>
 </body>
 </html>
