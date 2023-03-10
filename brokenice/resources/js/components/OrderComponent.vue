@@ -37,7 +37,7 @@ export default {
     },
     mounted() {
         console.log('Component order mounted')
-        axios.get('http://127.0.0.1/vue3/api/orders').then(response => this.orders = response.data)
+        axios.get('http://127.0.0.1/api/vue3/orders').then(response => this.orders = response.data)
             .catch(function (error) {
                 console.log(error);
             });

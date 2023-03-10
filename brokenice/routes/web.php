@@ -37,12 +37,6 @@ Route::get('/vue3/orders', function () {
     return view('vue3.orders');
 });
 
-Route::controller(ApiController::class)->group(function () {
-    Route::get('/vue3/api/employees/', 'getEmployees');
-    Route::get('/vue3/api/customers/', 'getCustomers');
-    Route::get('/vue3/api/orders/', 'getOrders');
-});
-
 Route::resource('employees', EmployeeController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('orders', OrderController::class);
