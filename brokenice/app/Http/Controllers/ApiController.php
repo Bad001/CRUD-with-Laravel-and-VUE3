@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Employee;
 use App\Models\Order;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
@@ -28,7 +28,12 @@ class ApiController extends Controller
     // Create
     public function storeCustomer(Request $request)
     {
-
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->surname = $request->surname;
+        $customer->email = $request->email;
+        $customer->phone_number = $request->phone_number;
+        $customer->save();
     }
     public function storeEmployee(Request $request)
     {

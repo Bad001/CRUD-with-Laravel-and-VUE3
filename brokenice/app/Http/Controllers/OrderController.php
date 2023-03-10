@@ -40,7 +40,7 @@ class OrderController extends Controller
             'employee_id' => ['required', 'integer', 'exists:employees,id', 'min:1'],
             'description' => ['required', 'max:255'],
         ]);
-        $order = new Order;
+        $order = new Order();
         $order->price = $request->price;
         $order->acquisition_date = $request->acquisition_date;
         $order->customer_id = $request->customer_id;

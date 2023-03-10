@@ -25,9 +25,9 @@ Route::controller(ApiController::class)->group(function () {
     Route::get('/vue3/customers/', 'getCustomers');
     Route::get('/vue3/orders/', 'getOrders');
     // Create
-    Route::post('/vue3/orders/', 'storeOrder');
-    Route::post('/vue3/customers/', 'storeCustomer');
-    Route::post('/vue3/employees/', 'storeEmployee');
+    Route::post('/vue3/orders', 'storeOrder');
+    Route::post('/vue3/customers', 'storeCustomer');
+    Route::post('/vue3/employees', 'storeEmployee');
     // Read
     Route::get('/vue3/orders/{order}', 'showOrder');
     Route::get('/vue3/customers/{customer}', 'showCustomer');

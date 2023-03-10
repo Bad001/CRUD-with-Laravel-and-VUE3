@@ -9,7 +9,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            title: 'Create an employee',
+            title: 'Create',
             employees:[]
         }
     },

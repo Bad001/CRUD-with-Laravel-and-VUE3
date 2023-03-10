@@ -41,7 +41,7 @@ class CustomerController extends Controller
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);
-        $customer = new Customer;
+        $customer = new Customer();
         $customer->name = $request->name;
         $customer->surname = $request->surname;
         $customer->email = $request->email;

@@ -64,7 +64,7 @@ class EmployeeController extends Controller
             'surname' => ['required', 'max:40'],
             'salary_level' => ['required', 'integer', 'between:1,5'],
         ]);
-        $employee = new Employee;
+        $employee = new Employee();
         $employee->name = $request->name;
         $employee->surname = $request->surname;
         $employee->email = $request->email;
