@@ -37,7 +37,7 @@ class CustomerController extends Controller
     {
         $request->validate([
             'email' => ['required', 'email:rfc,dns', 'unique:customers', 'max:40'],
-            'phone_number' => ['required', 'integer', 'unique:customers', 'max:10'],
+            'phone_number' => ['required', 'integer', 'unique:customers', 'max_digits:10'],
             'name' => ['required', 'max:40'],
             'surname' => ['required', 'max:40'],
         ]);
