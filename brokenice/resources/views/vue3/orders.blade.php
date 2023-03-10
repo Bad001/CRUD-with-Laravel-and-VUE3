@@ -8,6 +8,7 @@
 <body>
 <div id="app">
     <order-component></order-component>
+    <a href="{{ url('/vue3/index') }}">Back to index</a>
 </div>
 </body>
 </html>

@@ -9,9 +9,9 @@
 <div id="app">
     <index-component></index-component>
 </div>
-<a href="{{ url('vue3/api/employees') }}">Employees</a>
-<a href="{{ url('vue3/api/customers') }}">Customers</a>
-<a href="{{ url('vue3/api/orders') }}">Orders</a>
+<a href="{{ url('vue3/employees') }}">Employees</a>
+<a href="{{ url('vue3/customers') }}">Customers</a>
+<a href="{{ url('vue3/orders') }}">Orders</a>
 <a href="{{ url('/') }}">Back to home</a>
 </body>
 </html>

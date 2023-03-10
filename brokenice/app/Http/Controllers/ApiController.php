@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Employee;
 use App\Models\Order;
@@ -11,14 +10,17 @@ class ApiController extends Controller
 {
     public function getOrders()
     {
-        return view('vue3.orders');
+        $orders = Order::all();
+        return response()->json($orders);
     }
     public function getEmployees()
     {
-        return view('vue3.employees');
+        $employees = Employee::all();
+        return response()->json($employees);
     }
     public function getCustomers()
     {
-        return view('vue3.customers');
+        $customers = Customer::all();
+        return response()->json($customers);
     }
 }
