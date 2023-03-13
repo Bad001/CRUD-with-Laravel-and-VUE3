@@ -24,7 +24,7 @@
         <label for="phone_number">Phone number</label><br>
         <input type="tel" maxlength="10" id="phone_number" name="phone_number" value="{{$employee->phone_number}}" required><br>
         <label for="salary_level">Salary level&nbsp;&nbsp;</label>
-        <select name="salary_level" id="salary_level" name="salary_level">
+        <select name="salary_level" id="salary_level">
             <option value="1" {{ $employee->salary_level == 1 ? 'selected' : '' }}>1</option>
             <option value="2" {{ $employee->salary_level == 2 ? 'selected' : '' }}>2</option>
             <option value="3" {{ $employee->salary_level == 3 ? 'selected' : '' }}>3</option>

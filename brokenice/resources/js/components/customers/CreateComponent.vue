@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{title}} {{name}}</h1>
+        <h1>{{title}} {{name}} {{surname}}</h1>
         <form @submit.prevent="submitForm">
             <label for="email">Email</label><br>
             <input type="email" id="email" v-model="email" required><br>
@@ -37,8 +37,7 @@ export default {
                 phone_number:this.phone_number
             }).then(response => {
                 console.log(response);
-                this.response = response.data
-                this.response = JSON.stringify(response)
+                this.response = response.data;
             }).catch(error => {
                 console.log(error);
             })
