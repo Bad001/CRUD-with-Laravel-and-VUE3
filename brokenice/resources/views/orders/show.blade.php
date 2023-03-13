@@ -4,12 +4,12 @@
     <table>
         <thead>
         <tr>
-            <td>ID</td>
-            <td>Price</td>
-            <td>Acquisition_Date</td>
-            <td>Customer_ID</td>
-            <td>Employee_ID</td>
-            <td>Description</td>
+            <th>ID</th>
+            <th>Price</th>
+            <th>Acquisition_Date</th>
+            <th>Customer_ID</th>
+            <th>Employee_ID</th>
+            <th>Description</th>
         </tr>
         </thead>
         <tbody>

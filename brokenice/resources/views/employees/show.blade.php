@@ -4,12 +4,12 @@
     <table>
         <thead>
         <tr>
-            <td>ID</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Phone Number</td>
-            <td>Email</td>
-            <td>Salary Level</td>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Salary Level</th>
         </tr>
         </thead>
         <tbody>

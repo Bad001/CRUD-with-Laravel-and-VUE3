@@ -8,12 +8,13 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Price</td>
-        <td>Acquisition_Date</td>
-        <td>Customer_ID</td>
-        <td>Employee_ID</td>
-        <td>Description</td>
+        <th>ID</th>
+        <th>Price</th>
+        <th>Acquisition Date</th>
+        <th>Customer ID</th>
+        <th>Employee ID</th>
+        <th>Description</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -42,11 +43,11 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Price</td>
-        <td>Acquisition_Date</td>
-        <td>Customer_ID</td>
-        <td>Description</td>
+        <th>ID</th>
+        <th>Price</th>
+        <th>Acquisition Date</th>
+        <th>Customer ID</th>
+        <th>Description</th>
     </tr>
     </thead>
     <tbody>
@@ -65,12 +66,12 @@
 <table>
     <thead>
     <tr>
-        <td>ID Order</td>
-        <td>Price</td>
-        <td>Acquisition_Date</td>
-        <td>Customer_ID</td>
-        <td>Description</td>
-        <td>Employee_ID</td>
+        <th>ID Order</th>
+        <th>Price</th>
+        <th>Acquisition Date</th>
+        <th>Customer ID</th>
+        <th>Description</th>
+        <th>Employee ID</th>
     </tr>
     </thead>
     <tbody>

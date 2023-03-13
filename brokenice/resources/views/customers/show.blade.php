@@ -4,11 +4,11 @@
     <table>
         <thead>
         <tr>
-            <td>ID</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Phone Number</td>
-            <td>Email</td>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
         </tr>
         </thead>
         <tbody>

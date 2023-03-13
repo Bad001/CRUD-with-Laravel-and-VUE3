@@ -80,7 +80,7 @@ class EmployeeController extends Controller
     public function show(string $id)
     {
         $employee = Employee::findOrFail($id);
-        return view('employees.show')->with('employees', $employee);
+        return view('employees.show')->with('employee', $employee);
     }
 
     /**

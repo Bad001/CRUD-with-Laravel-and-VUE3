@@ -8,12 +8,13 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Salary Level</td>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Salary Level</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -42,12 +43,12 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Salary Level</td>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Salary Level</th>
     </tr>
     </thead>
     <tbody>
@@ -67,8 +68,8 @@
 <table>
     <thead>
     <tr>
-        <td>Total orders</td>
-        <td>Salary level</td>
+        <th>Total orders</th>
+        <th>Salary level</th>
     </tr>
     </thead>
     <tbody>
@@ -84,13 +85,13 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Total amount</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Salary Level</td>
+        <th>ID</th>
+        <th>Total amount</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Salary Level</th>
     </tr>
     </thead>
     <tbody>
@@ -115,8 +116,8 @@
 <table>
     <thead>
     <tr>
-        <td>Total Amount Of Orders</td>
-        <td>Salary level</td>
+        <th>Total Amount Of Orders</th>
+        <th>Salary level</th>
     </tr>
     </thead>
     <tbody>
@@ -136,13 +137,13 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Orders Handled</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
-        <td>Salary Level</td>
+        <th>ID</th>
+        <th>Orders Handled</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Salary Level</th>
     </tr>
     </thead>
     <tbody>

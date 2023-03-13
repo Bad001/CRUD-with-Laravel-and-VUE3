@@ -8,17 +8,18 @@
 <table>
     <thead>
     <tr>
-        <td>ID</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
     @foreach($customers as $customer => $value)
         <tr>
-            <td>{{ $value->id }}</td>
+            <th>{{ $value->id }}</th>
             <td>{{ $value->name }}</td>
             <td>{{ $value->surname }}</td>
             <td>{{ $value->phone_number }}</td>
@@ -40,12 +41,12 @@
 <table>
     <thead>
     <tr>
-        <td>Customer ID</td>
-        <td>Amount Spent</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Phone Number</td>
-        <td>Email</td>
+        <th>Customer ID</th>
+        <th>Amount Spent</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
     </tr>
     </thead>
     <tbody>
