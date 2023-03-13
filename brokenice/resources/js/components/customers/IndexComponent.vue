@@ -1,6 +1,8 @@
 <template>
     <div>
         <h1>{{title}}</h1>
+        <a href="/vue3">Back to index</a>
+        <a href="/vue3/customers/create">| Create a customer</a>
         <table>
             <thead>
             <tr>

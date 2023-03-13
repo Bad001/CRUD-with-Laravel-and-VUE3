@@ -59,3 +59,13 @@ Route::get('/vue3/customers/{customer}/edit', function () {
 Route::get('/vue3/orders/{order}/edit', function () {
     return view('vue3.orders.edit');
 });
+
+Route::get('/vue3/employees/{employee}', function () {
+    return view('vue3.employees.show');
+});
+Route::get('/vue3/customers/{customer}', function () {
+    return view('vue3.customers.show');
+});
+Route::get('/vue3/orders/{customer}', function () {
+    return view('vue3.orders.show');
+});

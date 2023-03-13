@@ -8,8 +8,6 @@
 <body>
 <div id="app">
     <index-customer-component></index-customer-component>
-    <a href="{{ url('/vue3') }}">Back to index</a>
-    <a href="{{ url('/vue3/customers/create') }}">| Create a customer</a>
 </div>
 </body>
 </html>

@@ -9,21 +9,15 @@
                 <th>Last Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
-                <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="customer in customers">
+            <tr>
                 <td>{{ customer.id }}</td>
                 <td>{{ customer.name }}</td>
                 <td>{{ customer.surname }}</td>
                 <td>{{ customer.phone_number }}</td>
                 <td>{{ customer.email }}</td>
-                <td>
-                    <button type="submit" @click="showElement(customer.id)">Show</button>
-                    <button type="submit" @click="editElement(customer.id)">Edit</button>
-                    <button type="submit" @click="deleteElement(customer.id)">Delete</button>
-                </td>
             </tr>
             </tbody>
         </table>
@@ -36,12 +30,21 @@ export default {
     data() {
         return {
             title: 'Show',
-            customers:[]
+            customer:[]
+        }
+    },
+    methods: {
+        getLastNumberOfString(str){
+            var allNumbers = str.replace(/[^0-9]/g, ' ').trim().split(/\s+/);
+            return parseInt(allNumbers[allNumbers.length - 1], 10);
         }
     },
     mounted() {
         console.log('Show customer mounted')
-        axios.get('http://127.0.0.1/api/vue3/customers/{id}').then(response => this.customers = response.data)
+        let url;
+        url = window.location.href;
+        url = url.replace('/vue3', '/api/vue3')
+        axios.get(url).then(response => this.customer = response.data)
             .catch(function (error) {
                 console.log(error);
             });
