@@ -4,22 +4,22 @@
         <table>
             <thead>
             <tr>
-                <td>Order ID</td>
-                <td>| Price</td>
-                <td>| Acquisition Date</td>
-                <td>| Customer ID</td>
-                <td>| Employee ID</td>
-                <td>| Description</td>
+                <th>Order ID</th>
+                <th>Price</th>
+                <th>Acquisition Date</th>
+                <th>Customer ID</th>
+                <th>Employee ID</th>
+                <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr v-for="order in orders">
                 <td>{{ order.id }}</td>
-                <td>| {{ order.price }} €</td>
-                <td>| {{ order.acquisition_date }}</td>
-                <td>| {{ order.customer_id }}</td>
-                <td>| {{ order.employee_id }}</td>
-                <td>| {{ order.description }}</td>
+                <td>{{ order.price }} €</td>
+                <td>{{ order.acquisition_date }}</td>
+                <td>{{ order.customer_id }}</td>
+                <td>{{ order.employee_id }}</td>
+                <td>{{ order.description }}</td>
             </tr>
             </tbody>
         </table>

@@ -25,7 +25,7 @@ Route::resource('customers', CustomerController::class);
 Route::resource('orders', OrderController::class);
 
 // Indexes
-Route::get('/vue3/index', function () {
+Route::get('/vue3', function () {
     return view('vue3.app');
 });
 Route::get('/vue3/employees', function () {

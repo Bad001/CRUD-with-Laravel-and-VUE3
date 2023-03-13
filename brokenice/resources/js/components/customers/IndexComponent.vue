@@ -4,20 +4,20 @@
         <table>
             <thead>
             <tr>
-                <td>Customer ID</td>
-                <td>| First Name</td>
-                <td>| Last Name</td>
-                <td>| Phone Number</td>
-                <td>| Email</td>
+                <th>Customer ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>
             <tr v-for="customer in customers">
                 <td>{{ customer.id }}</td>
-                <td>| {{ customer.name }}</td>
-                <td>| {{ customer.surname }}</td>
-                <td>| {{ customer.phone_number }}</td>
-                <td>| {{ customer.email }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.surname }}</td>
+                <td>{{ customer.phone_number }}</td>
+                <td>{{ customer.email }}</td>
             </tr>
             </tbody>
         </table>

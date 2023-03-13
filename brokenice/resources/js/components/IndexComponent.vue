@@ -16,11 +16,3 @@ export default {
     }
 }
 </script>
-<style>
-html, body {
-    background-color: #636b6f;
-    color: #fff;
-    font-weight: 200;
-    height: 100vh;
-}
-</style>

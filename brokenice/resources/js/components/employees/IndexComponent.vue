@@ -4,22 +4,22 @@
         <table>
             <thead>
             <tr>
-                <td>Employee ID</td>
-                <td>| First Name</td>
-                <td>| Last Name</td>
-                <td>| Phone Number</td>
-                <td>| Email</td>
-                <td>| Salary Level</td>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Salary Level</th>
             </tr>
             </thead>
             <tbody>
             <tr v-for="employee in employees">
                 <td>{{ employee.id }}</td>
-                <td>| {{ employee.name }}</td>
-                <td>| {{ employee.surname }}</td>
-                <td>| {{ employee.phone_number }}</td>
-                <td>| {{ employee.email }}</td>
-                <td>| {{ employee.salary_level }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.surname }}</td>
+                <td>{{ employee.phone_number }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.salary_level }}</td>
             </tr>
             </tbody>
         </table>

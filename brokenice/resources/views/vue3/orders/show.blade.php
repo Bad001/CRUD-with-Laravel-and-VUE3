@@ -8,7 +8,7 @@
 <body>
 <div id="app">
     <show-order-component></show-order-component>
-    <a href="{{ url('/vue3/index') }}">Back to index</a>
+    <a href="{{ url('/vue3/orders') }}">Back to orders</a>
 </div>
 </body>
 </html>
