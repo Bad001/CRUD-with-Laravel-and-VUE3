@@ -21,6 +21,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="/vue3/customers">Back to customers</a>
     </div>
 </template>
 

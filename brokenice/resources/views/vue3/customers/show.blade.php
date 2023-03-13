@@ -8,7 +8,6 @@
 <body>
 <div id="app">
     <show-customer-component></show-customer-component>
-    <a href="{{ url('/vue3/customers') }}">Back to customers</a>
 </div>
 </body>
 </html>

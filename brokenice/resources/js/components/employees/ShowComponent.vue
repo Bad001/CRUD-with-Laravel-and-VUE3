@@ -23,6 +23,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="/vue3/employees">Back to employees</a>
     </div>
 </template>
 
@@ -32,7 +33,8 @@ export default {
     data() {
         return {
             title: 'Show',
-            employee:[]
+            employee:[],
+            url:''
         }
     },
     mounted() {

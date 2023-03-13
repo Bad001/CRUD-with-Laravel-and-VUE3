@@ -60,6 +60,7 @@ Route::get('/vue3/orders/{order}/edit', function () {
     return view('vue3.orders.edit');
 });
 
+// Show views
 Route::get('/vue3/employees/{employee}', function () {
     return view('vue3.employees.show');
 });
