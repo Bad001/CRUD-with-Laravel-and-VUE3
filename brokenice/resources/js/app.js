@@ -6,6 +6,7 @@
 
 import './bootstrap';
 import '/public/css/style.css';
+import {createRouter, createWebHistory} from 'vue-router';
 import { createApp } from 'vue';
 
 /**
@@ -13,6 +14,22 @@ import { createApp } from 'vue';
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
+
+const routes = [
+    { path: '/vue3', component: IndexComponent},
+    { path: '/vue3/customers', component: IndexCustomerComponent},
+    { path: '/vue3/employees', component: IndexEmployeeComponent},
+    { path: '/vue3/orders', component: IndexOrderComponent},
+    { path: '/vue3/customers/create', component: CreateCustomerComponent},
+    { path: '/vue3/employees/create', component: CreateEmployeeComponent},
+    { path: '/vue3/orders/create', component: CreateOrderComponent}
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+});
+
 
 const app = createApp({});
 
@@ -49,6 +66,7 @@ app.component('show-customer-component', ShowCustomerComponent);
 app.component('create-order-component', CreateOrderComponent);
 app.component('edit-order-component', EditOrderComponent);
 app.component('show-order-component', ShowOrderComponent);
+app.use(router);
 app.mount('#app');
 /**
  * The following block of code may be used to automatically register your

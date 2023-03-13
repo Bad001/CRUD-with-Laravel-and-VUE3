@@ -78,15 +78,18 @@ class ApiController extends Controller
     // Read
     public function showCustomer(string $id)
     {
-
+        $customer = Customer::findOrFail($id);
+        return response()->json($customer);
     }
     public function showEmployee(string $id)
     {
-
+        $employee = Employee::findOrFail($id);
+        return response()->json($employee);
     }
     public function showOrder(string $id)
     {
-
+        $order = Order::findOrFail($id);
+        return response()->json($order);
     }
     // Update
     public function updateCustomer(Request $request, string $id)

@@ -9,6 +9,7 @@
                 <th>Last Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +19,11 @@
                 <td>{{ customer.surname }}</td>
                 <td>{{ customer.phone_number }}</td>
                 <td>{{ customer.email }}</td>
+                <td>
+                    <button type="submit" @click="showElement(customer.id)">Show</button>
+                    <button type="submit" @click="editElement(customer.id)">Edit</button>
+                    <button type="submit" @click="deleteElement(customer.id)">Delete</button>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -31,6 +37,20 @@ export default {
         return {
             title: 'Customer Section',
             customers:[]
+        }
+    },
+    methods: {
+        showElement(id) {
+            location.href = "/vue3/customers/"+id;
+        },
+        editElement(id) {
+            location.href = "/vue3/customers/"+id+"/edit";
+        },
+        deleteElement(id) {
+            axios.delete('http://127.0.0.1/api/vue3/customers/'+id).then(response => this.customers = response.data)
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
     mounted() {

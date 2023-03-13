@@ -89,7 +89,7 @@ class EmployeeController extends Controller
     public function edit(string $id)
     {
         $employee = Employee::findOrFail($id);
-        return view('employees.edit')->with('employees', $employee);
+        return view('employees.edit')->with('employee', $employee);
     }
 
     /**

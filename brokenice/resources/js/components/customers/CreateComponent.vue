@@ -12,6 +12,7 @@
             <input type="tel" maxlength="10" id="phone_number" v-model="phone_number" required><br>
             <button type="submit">Submit</button>
         </form>
+        <a href="/vue3/customers">Back to customers</a>
     </div>
 </template>
 
@@ -38,6 +39,7 @@ export default {
             }).then(response => {
                 console.log(response);
                 this.response = response.data;
+                location.href = "/vue3/customers/";
             }).catch(error => {
                 console.log(error);
             })

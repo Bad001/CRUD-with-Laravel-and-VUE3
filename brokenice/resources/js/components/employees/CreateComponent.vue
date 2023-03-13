@@ -20,6 +20,7 @@
             </select><br>
             <button type="submit">Submit</button>
         </form>
+        <a href="/vue3/employees">Back to employees</a>
     </div>
 </template>
 
@@ -48,6 +49,7 @@ export default {
             }).then(response => {
                 console.log(response);
                 this.response = response.data;
+                location.href = "/vue3/employees";
             }).catch(error => {
                 console.log(error);
             })

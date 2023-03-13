@@ -14,6 +14,7 @@
             <textarea id="description" v-model="description"></textarea><br>
             <button type="submit">Submit</button>
         </form>
+        <a href="/vue3/orders">Back to orders</a>
     </div>
 </template>
 
@@ -42,6 +43,7 @@ export default {
             }).then(response => {
                 console.log(response);
                 this.response = response.data;
+                location.href = "/vue3/orders";
             }).catch(error => {
                 console.log(error);
             })

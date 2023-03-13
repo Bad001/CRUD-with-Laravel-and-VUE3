@@ -15,7 +15,7 @@ export default {
     },
     mounted() {
         console.log('Edit order mounted')
-        axios.get('http://127.0.0.1/api/vue3/orders').then(response => this.orders = response.data)
+        axios.patch('http://127.0.0.1/api/vue3/orders/{id}').then(response => this.orders = response.data)
             .catch(function (error) {
                 console.log(error);
             });

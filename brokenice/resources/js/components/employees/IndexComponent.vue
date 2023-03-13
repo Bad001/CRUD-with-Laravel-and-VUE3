@@ -10,6 +10,7 @@
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Salary Level</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>

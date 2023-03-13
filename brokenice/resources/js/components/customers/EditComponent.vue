@@ -15,7 +15,7 @@ export default {
     },
     mounted() {
         console.log('Edit customer mounted')
-        axios.get('http://127.0.0.1/api/vue3/customers').then(response => this.customers = response.data)
+        axios.patch('http://127.0.0.1/api/vue3/customers/{id}').then(response => this.customers = response.data)
             .catch(function (error) {
                 console.log(error);
             });

@@ -10,6 +10,7 @@
                 <th>Customer ID</th>
                 <th>Employee ID</th>
                 <th>Description</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
