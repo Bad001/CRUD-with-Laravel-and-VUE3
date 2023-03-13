@@ -49,7 +49,7 @@ export default {
             location.href = "/vue3/customers/"+id+"/edit";
         },
         deleteElement(id) {
-            axios.delete('http://127.0.0.1/api/vue3/customers/'+id).then(response => this.customers = response.data)
+            axios.delete('http://127.0.0.1/api/vue3/customers/'+id).then(location.reload())
                 .catch(function (error) {
                     console.log(error);
                 });

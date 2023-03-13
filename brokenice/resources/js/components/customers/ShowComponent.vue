@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{title}} {{name}} {{surname}}</h1>
+        <h1>{{title}} {{customer.name}} {{customer.surname}}</h1>
         <table>
             <thead>
             <tr>
@@ -30,21 +30,15 @@ export default {
     data() {
         return {
             title: 'Show',
-            customer:[]
-        }
-    },
-    methods: {
-        getLastNumberOfString(str){
-            var allNumbers = str.replace(/[^0-9]/g, ' ').trim().split(/\s+/);
-            return parseInt(allNumbers[allNumbers.length - 1], 10);
+            customer:[],
+            url: ''
         }
     },
     mounted() {
         console.log('Show customer mounted')
-        let url;
-        url = window.location.href;
-        url = url.replace('/vue3', '/api/vue3')
-        axios.get(url).then(response => this.customer = response.data)
+        this.url = window.location.href;
+        this.url = this.url.replace('/vue3', '/api/vue3')
+        axios.get(this.url).then(response => this.customer = response.data)
             .catch(function (error) {
                 console.log(error);
             });

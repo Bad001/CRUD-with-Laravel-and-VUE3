@@ -33,6 +33,9 @@ Route::controller(ApiController::class)->group(function () {
     Route::get('/vue3/customers/{customer}', 'showCustomer');
     Route::get('/vue3/employees/{employees}', 'showEmployee');
     // Update
+    Route::get('/vue3/orders/{order}/edit', 'showOrder');
+    Route::get('/vue3/customers/{customer}/edit', 'showCustomer');
+    Route::get('/vue3/employees/{employees}/edit', 'showEmployee');
     Route::patch('/vue3/orders/{order}', 'updateOrder');
     Route::patch('/vue3/customers/{customer}', 'updateCustomer');
     Route::patch('/vue3/employees/{employees}', 'updateEmployee');
