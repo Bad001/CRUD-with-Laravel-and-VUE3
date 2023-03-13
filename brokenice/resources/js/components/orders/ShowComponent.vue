@@ -9,8 +9,9 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            title: 'Show a order',
-            orders:[]
+            title: 'Show Order N.',
+            order:[],
+            url:''
         }
     },
     mounted() {

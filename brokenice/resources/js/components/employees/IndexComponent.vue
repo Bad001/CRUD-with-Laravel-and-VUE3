@@ -23,6 +23,11 @@
                 <td>{{ employee.phone_number }}</td>
                 <td>{{ employee.email }}</td>
                 <td>{{ employee.salary_level }}</td>
+                <td>
+                    <button type="submit" @click="showElement(employee.id)">Show</button>
+                    <button type="submit" @click="editElement(employee.id)">Edit</button>
+                    <button type="submit" @click="deleteElement(employee.id)">Delete</button>
+                </td>
             </tr>
             </tbody>
         </table>
@@ -36,6 +41,20 @@ export default {
         return {
             title: 'Employee Section',
             employees:[]
+        }
+    },
+    methods: {
+        showElement(id) {
+            location.href = "/vue3/employees/"+id;
+        },
+        editElement(id) {
+            location.href = "/vue3/employees/"+id+"/edit";
+        },
+        deleteElement(id) {
+            axios.delete('http://127.0.0.1/api/vue3/employees/'+id).then(location.reload())
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
     mounted() {
